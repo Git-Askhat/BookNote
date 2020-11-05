@@ -12,7 +12,8 @@ public class Const {
     public static final String USERS_GENDER = "gender";
     public static final String USERS_LOCATION = "location";
 
-    public static final String TASKS_ID = "tasksid";
-    public static final String TASKS_DATE = "datecreated";
-    public static final String TASKS_DESCRIPTION = "description";
+    //public static final String TASKS_ID = "tasksid";
+    //public static final String TASKS_DATE = "datecreated";
+    //public static final String TASKS_DESCRIPTION = "description";
+    //public static final String TASKS_TASK = "task";
 }

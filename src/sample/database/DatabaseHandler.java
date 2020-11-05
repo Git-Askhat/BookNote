@@ -1,5 +1,6 @@
 package sample.database;
 
+//import sample.Notes;
 import sample.User;
 
 import java.sql.*;
@@ -40,13 +41,13 @@ public class DatabaseHandler extends Configs{
     public ResultSet getUser(User user){
         ResultSet resultSet = null;
         if(!user.getUserName().equals("") || !user.getPassword().equals("")){
-            String query = "SELECT * FROM "+Const.USERS_TABLE+" WHERE"+
+            String query = "SELECT * FROM "+Const.USERS_TABLE+" WHERE "+
                     Const.USERS_USERNAME+"=?"+" AND "+ Const.USERS_PASSWORD+
                     "=?";
             try {
                 PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
                 preparedStatement.setString(1, user.getUserName());
-                preparedStatement.setString(1, user.getPassword());
+                preparedStatement.setString(2, user.getPassword());
                 resultSet = preparedStatement.executeQuery();
 
             } catch (SQLException e) {
@@ -60,5 +61,43 @@ public class DatabaseHandler extends Configs{
         }
 
         return resultSet;
+    }/*
+    public void BookNotes(Notes notes){
+        String insert = "INSERT INTO "+Const.TASKS_TABLE+"("+Const.TASKS_TASK+","
+                +Const.TASKS_DESCRIPTION+")"+"VALUES(?,?)";
+        try {
+            PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
+            preparedStatement.setString(1, notes.getNote());
+            preparedStatement.setString(2, notes.getDescription());
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }public ResultSet getNotes(Notes notes){
+        ResultSet resultSet = null;
+        if(!notes.getNote().equals("") || !notes.getDescription().equals("")){
+            String query = "SELECT * FROM "+Const.TASKS_TABLE+" WHERE "+
+                    Const.TASKS_TASK+"=?"+" AND "+Const.TASKS_DESCRIPTION+"=?";
+
+            try {
+                PreparedStatement preparedStatement = getDbConnection().prepareStatement(query);
+                preparedStatement.setString(1, notes.getNote());
+                preparedStatement.setString(2, notes.getDescription());
+                resultSet = preparedStatement.executeQuery();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }else{
+            System.out.println("Desc...");
+        }
+        return resultSet;
     }
+    */
 }

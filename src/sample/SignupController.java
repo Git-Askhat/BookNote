@@ -52,24 +52,29 @@ public class SignupController {
         signUpButton.setOnAction(actionEvent -> {
             createUser();
             signUpButton.getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/sample/view/login.fxml"));
-
             try {
-                loader.load();
+                Parent root = FXMLLoader.load(getClass().getResource("/sample/view/login.fxml"));
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
+
+            /*
             Parent root = loader.getRoot();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.showAndWait();
+
+             */
+
         });
 
     }
     public void createUser(){
         DatabaseHandler databaseHandler = new DatabaseHandler();
-
         String name = singUpFirstName.getText();
         String lastName = signUpLastName.getText();
         String userName = signUpUserName.getText();
@@ -79,7 +84,7 @@ public class SignupController {
         if(signUpCheckBoxMale.isSelected()){gender = "Male";}
         else gender="Female";
         User user = new User(name, lastName, userName, password, location, gender);
-
         databaseHandler.signUpUser(user);
+
     }
 }
