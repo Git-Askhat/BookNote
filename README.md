@@ -5,7 +5,7 @@ but they lost note books.This project will save your note to the Internet.
 You can note here easily!
 
 I use MySQL (workbench)
-Exist 3 window: login, signUp, takeNote
+Exists 3 windows: login, signUp, takeNote
 
 IT LOOKS LIKE:
 ![Screenshot from 2020-11-06 02-17-53](https://user-images.githubusercontent.com/49748480/98297023-03176e00-1fde-11eb-852d-c629e37822e7.png)
