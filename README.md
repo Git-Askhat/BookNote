@@ -4,7 +4,8 @@ This project for bibliophiles and everyone.Most of pople take notes while readin
 but they lost note books.This project will save your note to the Internet.
 You can note here easily!
 
-For linux System this command help you to execute: java --module-path /home/askhat/Documents/javafx-sdk-11.0.2/lib/ --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.web -jar Book_Note.jar
+For linux System this command help you to execute => java --module-path /home/askhat/Documents/javafx-sdk-11.0.2/lib/ --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.web -jar Book_Note.jar
+Change /home/askhat/Documents/javafx-sdk-11.0.2/lib/ ==> Path to your javafx lib.
 
 I use MySQL (workbench)
 Exists 3 windows: login, signUp, takeNote
