@@ -56,8 +56,6 @@ public class LoginController {
             try {
                 while (userRow.next()) {
                     count++;
-                    String name = userRow.getString("firstname");
-                    System.out.println("Welcome! "+name);
                 } if (count == 1) {
                     showAddItemScreen();
                 }else{
